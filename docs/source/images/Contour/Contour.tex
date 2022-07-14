@@ -1,0 +1,48 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat = 1.7}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+    \begin{axis}[/pgf/number format/.cd,
+        use comma,
+        1000 sep={},
+        %   title = {$x \exp(-x^2-y^2)$}
+        , xlabel = $x$
+            , ylabel = $y$
+            , domain = -1:1
+            , y domain = -1:1
+        , enlargelimits
+        , view = {0}{90}
+        , x tick label style={
+             /pgf/number format/.cd,
+             fixed,
+             fixed zerofill,
+             precision=1,
+             /tikz/.cd
+            }
+          , y tick label style={
+             /pgf/number format/.cd,
+             fixed,
+             fixed zerofill,
+             precision=1,
+             /tikz/.cd
+            }  
+        ]
+
+       \addplot3[
+            contour gnuplot={
+                  number = 10
+                 },
+             thick
+            ]
+         {
+            776.062 -50.812* x + 153.062 * y -76.812 *x *y
+            };
+    \end{axis}
+
+\end{tikzpicture}
+
+\end{document}

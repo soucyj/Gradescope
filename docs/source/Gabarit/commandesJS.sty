@@ -1,0 +1,233 @@
+% Document créé par Jérôme Soucy <jerome.soucy@mat.ulaval.ca>
+% Dernière modification : 13 février 2022
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+\RequirePackage{interval}		% Pour les intervalles de nombres réels
+\RequirePackage{stmaryrd}		% Pour les intervalles d'entiers
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{graphicx,tipa}	% Pour les arcs de cercle
+
+%----------------------------------------------------------------
+% Pour la commande \DeclareMathMacro qui ne considère la définition que si on
+% est en mode mathématique
+%----------------------------------------------------------------
+\makeatletter
+\newcommand{\DeclareMathMacro}[2]{%
+	\expandafter\let\csname original@\expandafter\@gobble\string#1\endcsname=#1
+	\expandafter\def\csname\expandafter\@gobble\string#1\endcsname{
+		\relax\ifmmode#2\else\csname original@\expandafter\@gobble\string#1
+		\expandafter\endcsname\fi}
+}
+
+%----------------------------------------------------------------
+% Pour les ensembles de nombres
+%----------------------------------------------------------------
+\DeclareMathMacro{\C}{\mathbb{C}}
+\DeclareMathMacro{\R}{\mathbb{R}}
+\DeclareMathMacro{\Rp}{\interval[open right]{0}{\infty}}
+\DeclareMathMacro{\Rps}{\interval[open]{0}{\infty}}
+\DeclareMathMacro{\Rneg}{\interval[open left]{-\infty}{0}}
+\DeclareMathMacro{\Rns}{\interval[open]{-\infty}{0}}
+\DeclareMathMacro{\Rs}{\mathbb{R}^{\star}}
+\DeclareMathMacro{\Cs}{\mathbb{C}^{\star}}
+\DeclareMathMacro{\Z}{\mathbb{Z}}
+\DeclareMathMacro{\Zn}{\mathbb{Z}_{\leq 0}}
+\DeclareMathMacro{\Zs}{\mathbb{Z}^{\star}}
+\DeclareMathMacro{\Zns}{\mathbb{Z}_{< 0}}
+\DeclareMathMacro{\Q}{\mathbb{Q}}
+\DeclareMathMacro{\Qs}{\mathbb{Q}^{\star}}
+\DeclareMathMacro{\Qp}{\mathbb{Q}_{\geq 0}}
+\DeclareMathMacro{\Qps}{\mathbb{Q}_{> 0}}
+\DeclareMathMacro{\Qn}{\mathbb{Q}_{\leq 0}}
+\DeclareMathMacro{\Qns}{\mathbb{Q}_{< 0}}
+\DeclareMathMacro{\N}{\mathbb{N}}
+\DeclareMathMacro{\Ns}{\mathbb{N}^{\star}}
+
+%----------------------------------------------------------------
+% Pour les constantes universelles
+%----------------------------------------------------------------
+\DeclareMathMacro{\eu}{e}
+\DeclareMathMacro{\piu}{\pi}
+\DeclareMathMacro{\iu}{i\mkern1mu}
+\DeclareMathMacro{\gammau}{\gamma}
+
+% Intégrales
+\newcommand{\evint}[3]{\mathopen{}\left[#1\right]\mathclose{}_{#2}^{#3}}
+
+
+%----------------------------------------------------------------
+% Pour les arcs, segments, droites et demi-droites
+% La commande \arc nécessite le package graphicx et le package tipa
+%----------------------------------------------------------------
+\newcommand{\arc}[1]{{%
+  \setbox9=\hbox{#1}%
+  \ooalign{\resizebox{\wd9}{\height}{\texttoptiebar{\phantom{A}}}\cr#1}}}
+
+
+\newcommand{\dr}[2]{\mathopen{}\left(#1#2\right)\mathclose{}}
+\newcommand{\seg}[2]{\mathopen{}\left[#1#2\right]\mathclose{}}
+\newcommand{\dd}[2]{\mathopen{}\left[#1#2\right)\mathclose{}}
+
+%----------------------------------------------------------------
+% Pour les intervalles, segments, droites et demi-droites
+%----------------------------------------------------------------
+\newcommand{\intff}[2]{\interval{#1}{#2}}
+\newcommand{\intoo}[2]{\interval[open]{#1}{#2}}
+\newcommand{\intof}[2]{\interval[open left]{#1}{#2}}
+\newcommand{\intfo}[2]{\interval[open right]{#1}{#2}}
+
+\newcommand{\intent}[2]{\llbracket #1 , #2\rrbracket}	% Intervalle d'entiers
+
+%----------------------------------------------------------------
+% Fonctions hyperboliques
+%----------------------------------------------------------------
+
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccosec}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
+\DeclareMathOperator{\arcoth}{arcoth}
+
+%----------------------------------------------------------------
+% Fonctions spéciales
+%----------------------------------------------------------------
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\Li}{Li}
+\DeclareMathOperator{\li}{li}
+\DeclareMathOperator{\Ei}{Ei}
+
+\providecommand{\floor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\ceil}[1]{\left \lceil #1 \right \rceil }
+
+%----------------------------------------------------------------
+% Analyse complexe
+%----------------------------------------------------------------
+
+
+\let\arg\relax
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\RE}{Re}
+\DeclareMathOperator{\IM}{Im}
+\DeclareMathOperator{\arg}{arg}
+\DeclareMathOperator{\Arg}{Arg}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\zbar}{\overline{z}}
+
+%----------------------------------------------------------------
+% Analyse vectorielle
+%----------------------------------------------------------------
+\DeclareMathOperator{\rot}{rot}
+\makeatletter
+\providecommand*\psc{\mathpalette\psc@{.5}}
+\providecommand*\psc@[2]{\mathbin{\vcenter{\hbox{
+	\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%----------------------------------------------------------------
+% Pour mettre du texte en exposant où en indice
+%----------------------------------------------------------------
+\providecommand*{\ped}[1]{			% Indice
+	\ensuremath{_\mathrm{#1}}}
+\providecommand*{\ap}[1]{			% Exposant
+	\ensuremath{^\mathrm{#1}}}
+
+\def\siecle#1{\textsc{\romannumeral #1}\textsuperscript{e}~siècle}
+
+
+\newcommand{\egdef}{\overset{\scriptsize\textrm{d\'ef}}{=}}
+%\newcommand{\defi}[1]{\textbf{#1}}
+
+
+\newcommand{\similitude}{\mathcal{S}}
+\newcommand{\isometrie}{\mathcal{I}}
+
+
+
+\newcommand{\Dom}[1]{\mathcal{D}_{#1}} %
+\newcommand{\Img}[1]{\mathcal{I}_{#1}} %
+\DeclareMathOperator{\Codom}{Codom}
+
+%----------------------------------------------------------------
+% Pour les probabilités
+%----------------------------------------------------------------
+
+
+\DeclareMathOperator{\variance}{Var}
+\DeclareMathOperator{\covariance}{Cov}
+
+\renewcommand{\P}[1]{\mathbb{P}\mathopen{}\left(#1\right)\mathclose{}}
+\newcommand{\Es}[1]{\mathbb{E}\mathopen{}\left(#1\right)\mathclose{}}
+\newcommand{\Cov}[1]{\covariance\mathopen{}\left(#1\right)\mathclose{}}
+\newcommand{\Var}[1]{\variance\mathopen{}\left(#1\right)\mathclose{}}
+
+
+%----------------------------------------------------------------
+% Pour les ensembles
+%----------------------------------------------------------------
+\DeclareMathOperator{\dimension}{dim}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\card}{card}
+\newcommand{\comp}{^{\mathsf{c}}}
+
+%----------------------------------------------------------------
+% Théorie des nombres
+%----------------------------------------------------------------
+\DeclareMathOperator{\pgcd}{pgcd}
+\DeclareMathOperator{\ppcm}{ppcm}
+\newcommand{\Mod}[3]{#1\equiv #2 \text{~mod} \,{#3}}
+
+%----------------------------------------------------------------
+% Algèbre linéaire
+%----------------------------------------------------------------
+\newcommand{\matdeux}[4]{
+	\left(\begin{array}{cc}
+		#1&#2\\
+		#3&#4\\
+	\end{array}\right)
+}
+\newcommand{\mattrois}[9]{
+	\left(\begin{array}{ccc}
+		#1&#2&#3\\
+		#4&#5&#6\\
+		#7&#8&#9\\
+	\end{array}\right)
+}
+\newcommand{\vdeux}[2]{
+	\left(\begin{matrix}#1\\#2\end{matrix}\right)
+}
+\newcommand{\vtrois}[3]{
+	\left(\begin{matrix}#1\\#2\\#3\end{matrix}\right)
+}
+
+% « Copyright © 2022, Jérôme Soucy
+% Permission is hereby granted, free of charge, to any person obtaining a copy 
+% of this software and associated documentation files (the “Software”), to deal 
+% in the Software without restriction, including without limitation the rights 
+% to  use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+% copies of the Software, and to permit persons to whom the Software is 
+% furnished to do so, subject to the following conditions:
+% - The above copyright notice and this permission notice shall be included in 
+% all copies or substantial portions of the Software.
+% - The Software is provided “as is”, without warranty of any kind, express or 
+% implied, including but not limited to the warranties of merchantability, 
+% fitness for a particular purpose and noninfringement. In no event shall the 
+% authors or copyright holders Jérôme Soucy be liable for any claim, damages or 
+% other liability, whether in an action of contract, tort or otherwise, arising 
+% from, out of or in connection with the software or the use or other dealings 
+% in the Software.
+% - Except as contained in this notice, the name of the Jérôme Soucy shall 
+% not be used in advertising or otherwise to promote the sale, use or other 
+% dealings in this Software without prior written authorization from the Jérôme 
+% Soucy. »
