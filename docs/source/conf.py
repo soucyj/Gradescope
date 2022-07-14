@@ -30,10 +30,7 @@ release = 'Université Laval'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx_math_dollar',
-              'sphinx.ext.mathjax',
-              'myst_parser']
-myst_enable_extensions = ['dollarmath','amsmath']
+extensions = ['myst_parser']
 autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 4
 # Add any paths that contain templates here, relative to this directory.
