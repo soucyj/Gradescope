@@ -1,7 +1,8 @@
 Utilisation du programme Python
 -----------------------------------
 
-1. Enregistrez le fichier `gradescope.py` dans le même dossier que les fichiers CSV. `Cliquez ici <https://github.com/soucyj/Gradescope/blob/main/gradescope.py>`_ . pour accéder au contenu du programme.
+1. Enregistrez le fichier `gradescope.py` dans le même dossier que les fichiers CSV. Pour enregistrer le fichier : https://github.com/soucyj/Gradescope/blob/main/gradescope.py
+
 2. Vous devriez voir quelque chose qui ressemble à ceci:
 
     ```{image} images/Github.png
