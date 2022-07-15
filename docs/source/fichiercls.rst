@@ -23,3 +23,5 @@ Voici les premières lignes du fichier, qui précisent notamment les paquets inc
     \RequirePackage{etoolbox}   % Pour utiliser \AtBeginDocument
     \RequirePackage{calc}       % Pour faire des calculs de largeur de minipage
     \RequirePackage{tikz}
+
+Vous pouvez accéder au fichier en `cliquant ici <https://github.com/soucyj/Gradescope/blob/main/Gradescope.cls>`_ .

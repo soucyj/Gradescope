@@ -10,6 +10,6 @@ Pour optimiser l'utilisation de Gradescope, j'ai créer une classe de document L
 - Une boîte au bas de chaque page pour que l'étudiant y inscrive ses initiales;
 - Une page à la fin pour poursuivre la solution d'une question si l'étudiant manque d'espace.
 
-Voici un exemple de résultat : `Examen.pdf <Examen.pdf>`_
+Voici un exemple de résultat : `Examen.pdf <https://github.com/soucyj/Gradescope/blob/main/Examen.pdf>`_ .
 
-Pour télécharger les fichiers nécessaires à la compilation (`Gradescope.cls`, `Examen.tex` et `logo.png`), téléchargez le fichier suivant : `Gabarit.zip <Gabarit.zip>`__
+Pour télécharger les fichiers nécessaires à la compilation (`Gradescope.cls`, `Examen.tex` et `logo.pdf`), téléchargez le fichier suivant : `Gabarit.zip <https://github.com/soucyj/Gradescope/blob/main/Gabarit.zip>`_ .
