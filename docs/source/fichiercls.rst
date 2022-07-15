@@ -1,5 +1,6 @@
+============================
 Le fichier Gradescope.cls
---------------------------------
+============================
 
 Le fichier **Gradescope.cls** est une classe personnalisée qui regroupe les éléments suivants:
 

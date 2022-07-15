@@ -1,5 +1,6 @@
+================================
 Le fichier Examen.tex
---------------------------------
+================================
 
 Le fichier **Examen.tex** est le document maître dont la compilation avec PDFLaTeX génère le PDF de l'examen à imprimer. Il est `accessible ici <https://github.com/soucyj/Gradescope/blob/main/Examen.tex>`_ .
 

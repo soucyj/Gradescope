@@ -1,5 +1,6 @@
+=================================
 Préparation des fichiers CSV
------------------------------------
+=================================
 
 1. Dans Gradescope, une fois la correction terminée, cliquez sur **Review Grades** dans le menu de gauche.
 2. Cliquez sur le bouton **Download Grades** au bas de la fenêtre, puis choisissez de télécharger le fichier au format CSV. Ne renommez pas ce fichier.

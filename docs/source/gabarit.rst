@@ -1,5 +1,6 @@
+===============
 Gabarit LaTeX
---------------------------------
+===============
 
 Pour optimiser l'utilisation de Gradescope, j'ai créer une classe de document LaTeX nommée tout simplement **Gradescope**. Son utilisation s'est avérée efficace jusqu'à maintenant. Elle comporte les éléments suivants, particulièrement important:
 
@@ -12,4 +13,4 @@ Pour optimiser l'utilisation de Gradescope, j'ai créer une classe de document L
 
 Voici un exemple de résultat : `Examen.pdf <https://github.com/soucyj/Gradescope/blob/main/Examen.pdf>`_ .
 
-Pour télécharger les fichiers nécessaires à la compilation (`Gradescope.cls`, `Examen.tex` et `logo.pdf`), téléchargez le fichier suivant : `Gabarit.zip <https://github.com/soucyj/Gradescope/blob/main/Gabarit.zip>`_ .
+Pour télécharger les fichiers nécessaires à la compilation (`Gradescope.cls`, `Examen.tex` et `logo.pdf`), téléchargez le fichier suivant : `Gabarit.zip <https://github.com/soucyj/Gradescope/blob/main/Gabarit.zip>`_ . **Vous devrez cliquer sur le bouton Download pour initialiser le téléchargement**.
