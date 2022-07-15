@@ -14,8 +14,8 @@ Gradescope au DMS
    gabarit.rst
    fichiercls.rst
    fichiertex.rst
-   prepCSV.md
-   UtilisationPython.md
+   prepCSV.rst
+   UtilisationPython.rst
 
 
 
